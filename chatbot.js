@@ -19,7 +19,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms)); // Função que usa
 
 client.on('message', async msg => {
 
-    if (msg.body.match(/(menu|Menu|dia|tarde|noite|oi|Oi|Olá|olá|ola|Ola|Teste|teste)/i) && msg.from.endsWith('@c.us')) {
+    if (msg.body.match(/(ajuda|Ajuda|AJUDA|Agendar|AGENDAR|agendar|suporte|Suporte|SUPORTE|catálogo|Catálogo|CATÁLOGO|CATALOGO|Catalogo|catalogo|informaçoes|Informaçoes|INFORMACOES|informacoes|Informações|INFORMAÇÕES|menu|Menu|MENU|dia|DIA|tarde|TARDE|noite|NOITE|oi|Oi|OI|Olá|olá|ola|Ola|OLA|OLÁ|Teste|teste|TESTE|Eae|eae|EAE)/i) && msg.from.endsWith('@c.us')) {
 
         const chat = await msg.getChat();
 
@@ -29,9 +29,7 @@ client.on('message', async msg => {
         const contact = await msg.getContact(); //Pegando o contato
         const name = contact.pushname; //Pegando o nome do contato
         await client.sendMessage(msg.from,'Olá, '+ name.split(" ")[0] + '! Sou o assistente virtual da empresa My Tech Path! Como posso ajudá-lo hoje? Por favor, digite uma das opções abaixo:\n\n1 - Como Funciona\n2 - Nossos Serviços\n3 - Benefícios\n4 - Como aderir\n5 - Outras perguntas'); //Primeira mensagem de texto
-        await delay(3000); //delay de 3 segundos
-        await chat.sendStateTyping(); // Simulando Digitação
-        await delay(5000); //Delay de 5 segundos
+        
     
         
     }
@@ -56,7 +54,7 @@ client.on('message', async msg => {
         await delay(3000); //delay de 3 segundos
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
-        await client.sendMessage(msg.from, 'Link para cadastro: https://www.instagram.com/mytechpath/');
+        await client.sendMessage(msg.from, 'Link para cadastro: https://mypathtech.com/');
 
 
     }
@@ -73,7 +71,7 @@ client.on('message', async msg => {
         await delay(3000); //delay de 3 segundos
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
-        await client.sendMessage(msg.from, 'Link para cadastro: https://www.instagram.com/mytechpath/');
+        await client.sendMessage(msg.from, 'Link para cadastro: https://mypathtech.com/');
     }
 
     if (msg.body !== null && msg.body === '3' && msg.from.endsWith('@c.us')) {
@@ -88,7 +86,7 @@ client.on('message', async msg => {
         await delay(3000); //delay de 3 segundos
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
-        await client.sendMessage(msg.from, 'Link para cadastro: https://www.instagram.com/mytechpath/');
+        await client.sendMessage(msg.from, 'Link para cadastro: https://mypathtech.com/');
 
     }
 
@@ -104,7 +102,7 @@ client.on('message', async msg => {
         await delay(3000); //delay de 3 segundos
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
-        await client.sendMessage(msg.from, 'Link para cadastro: https://www.instagram.com/mytechpath/');
+        await client.sendMessage(msg.from, 'Link para cadastro: https://mypathtech.com/');
 
 
     }
